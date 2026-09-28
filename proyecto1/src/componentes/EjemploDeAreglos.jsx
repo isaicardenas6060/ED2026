@@ -1,45 +1,52 @@
-
+import React from 'react'
 import { useEffect, useState } from "react";
-function EjemploDeAreglos() {
-    //Iniciamos con un estado para un arreglo
-const [elementos,setElementos]=useState([]);
 
-//Funcion para agregar datos
-const agregarDatos=()=>{
-const nuevoNumero=Math.floor(Math.random()*50);
-setElementos([...elementos, nuevoNumero])
-}
+function EJEMPLOARREGLOS() { // Iniciamos con un estado para un arreglo
+  const [elementos, setElementos] = useState([]);
 
-//Recorrer funcion flecla
-const datos=(elementos,index)=>(
-  <li key={index} style={{margin:`5px 0`,fontsize:`18px`}}>
-     Elemeto #{index+1}<strong>{elementos}</strong>
-  </li>
-)
+  // Crear función para agregar datos
+  const agregarDato = () => {
+  
+    const nuevoNumero = Math.floor(Math.random() * 50);
 
-//Hook por defecto
-useEffect(()=>{
-  console .log("El arreglo de datos actual es:",elementos)
-},[elementos])
+    setElementos([...elementos, nuevoNumero]);
+  };
+
+  // Método para recorrer el arreglo
+  const recorrerArreglo = (elemento, index) => (
+    <li
+      key={index}
+      style={{
+        margin: "5px 0",
+        fontSize: "18px"
+      }}
+    >
+      Elemento #{index + 1}: <strong>{elemento}</strong>
+    </li>
+  );
+
+  // Hook de efecto
+  useEffect(() => {
+    console.log("El arreglo de datos es: ", elementos);
+  }, [elementos]);
+
   return (
-    <>
-<h1>Mi primer arreglo de datos</h1>
-<div style={{padding:`20px`}}>
-    <h2>paso 1. Agregar datos al arreglo</h2>
-    <button onClick={agregarDatos}>agrear numero aleatorio</button>
-    <ul> 
-      {/*si el arreglo esta vacio enviar un mensaj */}
+   <>
+      <h1>Hola a todos</h1>
 
-      { elementos.length===o?(
-        <>
-      <p>Aun no hay nada en el arreglo</p>
-      <p>presiona el boton de agregar datos</p>
-       </>
-      ):(elementos.map(datos))}
-    </ul>
-    </div>
-</>
+      <div style={{ padding: "20px" }}>
+        <h2>Paso 1. Agregar datos al arreglo</h2>
+
+        <button onClick={agregarDato}>
+          Agregar número de datos
+        </button>
+
+        <ul>
+          {elementos.map(recorrerArreglo)}
+        </ul>
+      </div>
+    </>
   )
 }
 
-export default EjemploDeAreglos
+export default EJEMPLOARREGLOS

@@ -1,12 +1,13 @@
-import EjemploDeAreglos from "./componentes/EjemploDeAreglos";
-import Pila from "./componentes/Pila";
-function App(){
+import EJEMPLOARREGLOS from "./componentes/EjemploDeAreglos";
+import Pila from "./componentes/Pila"
 
-  return (
-<> 
-<EjemploDeAreglos/>
-<Pila/>
-</>
- )
+function App(){
+  return(
+    <>
+    <EJEMPLOARREGLOS/>
+    <Pila />
+    </>
+  );
+
 }
 export default App;
