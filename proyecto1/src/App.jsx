@@ -1,11 +1,13 @@
+import Ejemplo2 from "./componentes/Ejemplo2";
 import EJEMPLOARREGLOS from "./componentes/EjemploDeAreglos";
 import Pila from "./componentes/Pila"
 
 function App(){
   return(
     <>
-    <EJEMPLOARREGLOS/>
-    <Pila />
+    {/* <EJEMPLOARREGLOS/>
+    <Pila /> */}
+    <Ejemplo2/>
     </>
   );
 
